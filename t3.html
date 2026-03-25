@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Варіант 3</title>
+</head>
+<body>
+<h2>Відкрий консоль (F12)</h2>
+
+<script>
+const products = [
+    { name: "Телефон", category: "Електроніка" },
+    { name: "Ноутбук", category: "Електроніка" },
+    { name: "Хліб", category: "Їжа" },
+    { name: "Молоко", category: "Їжа" }
+];
+
+const grouped = products.reduce((acc, product) => {
+    if (!acc[product.category]) {
+        acc[product.category] = [];
+    }
+    acc[product.category].push(product.name);
+    return acc;
+}, {});
+
+console.log("Згруповані товари:", grouped);
+</script>
+
+</body>
+</html>
