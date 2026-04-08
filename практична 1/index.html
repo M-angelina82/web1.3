@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    let integerNumber = 10;
+    let floatNumber = 5.7;
+    let text = "Hello";
+    let isActive = true;
+    console.log(integerNumber);
+    console.log(floatNumber);
+    console.log(text);
+    console.log(isActive);
+
+    console.log(typeof integerNumber);
+    console.log(typeof floatNumber);
+    console.log(typeof text);
+    console.log(typeof isActive);
+
+    integerNumber = 20;
+    floatNumber = 3.14;
+    text = "JavaScript";
+    isActive = false;
+
+    console.log(typeof integerNumber);
+    console.log(typeof floatNumber);
+    console.log(typeof text);
+    console.log(typeof isActive);
+
+   let result = integerNumber + text;
+   console.log(result);
+
+   console.log(Number(true));
+   console.log(Number(false));
+
+   let numberFromString = Number("50");
+   console.log(numberFromString);
+   let user = {
+    name: "angelina",
+    age: 16,
+    height: 1.6,
+    isStudent: true
+};
+
+console.log(JSON.stringify(user));
+</script>
+    
+</body>
+</html>

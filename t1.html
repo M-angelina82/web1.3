@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Варіант 1</title>
+</head>
+<body>
+<h2>Відкрий консоль (F12)</h2>
+
+<script>
+const numbers = [5, 12, 8, 20, 3, 15];
+
+// середнє
+const sum = numbers.reduce((a, b) => a + b, 0);
+const avg = sum / numbers.length;
+
+// макс і мін
+const max = Math.max(...numbers);
+const min = Math.min(...numbers);
+
+// сортування
+const sorted = [...numbers].sort((a, b) => a - b);
+
+console.log("Масив:", numbers);
+console.log("Середнє:", avg);
+console.log("Максимум:", max);
+console.log("Мінімум:", min);
+console.log("Відсортований:", sorted);
+</script>
+
+</body>
+</html>
