@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Практична робота JS</title>
+</head>
+<body>
+
+<script>
+    let task = prompt("Виберіть завдання (1-5):");
+
+    if (task == "1") {
+        let age = Number(prompt("Введіть ваш вік:"));
+
+        if (age < 18) {
+            alert("Вам заборонено вхід");
+        } else if (age <= 65) {
+            alert("Ласкаво просимо!");
+        } else if (age > 65) {
+            alert("Будь ласка, будьте обережні!");
+        } else {
+            alert("Введіть коректний вік");
+        }
+    }
+
+    else if (task == "2") {
+        let n = Number(prompt("Введіть число:"));
+
+        if (isNaN(n) || n < 2) {
+            console.log("Введіть коректне число");
+        } else {
+            for (let i = 2; i <= n; i++) {
+                if (i % 2 === 0) {
+                    console.log(i);
+                }
+            }
+        }
+    }
+
+    else if (task == "3") {
+        let n = Number(prompt("Введіть число:"));
+
+        if (isNaN(n) || n < 0) {
+            console.log("Введіть коректне число");
+        } else {
+            let result = 1;
+            let i = 1;
+
+            while (i <= n) {
+                result *= i;
+                i++;
+            }
+
+            console.log("Факторіал:", result);
+        }
+    }
+
+    else if (task == "4") {
+        let a = Number(prompt("Введіть перше число:"));
+        let b = Number(prompt("Введіть друге число:"));
+        let op = prompt("Введіть операцію (+, -, *, /):");
+
+        let result;
+
+        switch (op) {
+            case "+":
+                result = a + b;
+                break;
+            case "-":
+                result = a - b;
+                break;
+            case "*":
+                result = a * b;
+                break;
+            case "/":
+                if (b === 0) {
+                    alert("Ділення на нуль неможливе");
+                    break;
+                }
+                result = a / b;
+                break;
+            default:
+                alert("Невідома операція");
+        }
+
+        if (result !== undefined) {
+            alert("Результат: " + result);
+        }
+    }
+
+    else if (task == "5") {
+        let randomNumber = Math.floor(Math.random() * 100) + 1;
+        let guess;
+
+        do {
+            guess = Number(prompt("Вгадайте число від 1 до 100:"));
+
+            if (guess < randomNumber) {
+                alert("Загадане число більше");
+            } else if (guess > randomNumber) {
+                alert("Загадане число менше");
+            } else {
+                alert("Вітаємо! Ви вгадали число!");
+            }
+
+        } while (guess !== randomNumber);
+    }
+
+    else {
+        alert("Такого завдання немає");
+    }
+</script>
+
+</body>
+</html>
