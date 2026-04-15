@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <title>Практична робота</title>
+</head>
+<body>
+
+<h2>Відкрий консоль (F12)</h2>
+
+<script>
+    
+function getRandomNumber() {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      const num = Math.floor(Math.random() * 100) + 1;
+      resolve(num);
+    }, 1000);
+  });
+}
+
+async function processNumber() {
+  try {
+    const num = await getRandomNumber();
+    console.log("Отримане число:", num);
+
+    if (num < 50) {
+      return num + 20;
+    } else {
+      throw new Error("Занадто велике число!");
+    }
+
+  } catch (error) {
+    console.log("Помилка оброблена:", error.message);
+    return "Оброблено помилку";
+  }
+}
+
+processNumber().then((result) => {
+  console.log("Результат:", result);
+});
+
+
+function fetchData(id) {
+  return new Promise((resolve) => {
+    const delay = Math.floor(Math.random() * 2000) + 1000;
+
+    setTimeout(() => {
+      resolve(`Дані для id ${id} (затримка ${delay} мс)`);
+    }, delay);
+  });
+}
+
+
+async function processData() {
+
+  console.log("Паралельне виконання:");
+  const parallelResults = await Promise.all([
+    fetchData(1),
+    fetchData(2),
+    fetchData(3),
+  ]);
+  console.log(parallelResults);
+
+  console.log("Послідовне виконання:");
+  const promises = [fetchData(4), fetchData(5), fetchData(6)];
+
+  for await (const result of promises) {
+    console.log(result);
+  }
+}
+
+processData();
+
+</script>
+
+</body>
+</html>

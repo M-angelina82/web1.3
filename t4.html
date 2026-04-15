@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Варіант 4</title>
+</head>
+<body>
+<h2>Відкрий консоль (F12)</h2>
+
+<script>
+const students = {
+    Іван: { math: 10, physics: 8, english: 9 },
+    Оля: { math: 12, physics: 11, english: 10 },
+    Петро: { math: 7, physics: 9, english: 8 }
+};
+
+for (let name in students) {
+    const grades = Object.values(students[name]);
+    const avg = grades.reduce((a, b) => a + b, 0) / grades.length;
+
+    console.log(name + ": середній бал =", avg);
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Варіант 2</title>
+</head>
+<body>
+<h2>Відкрий консоль (F12)</h2>
+
+<script>
+const users = [
+    { name: "Іван", age: 17 },
+    { name: "Оля", age: 22 },
+    { name: "Петро", age: 19 },
+    { name: "Марія", age: 15 }
+];
+
+const adults = users.filter(u => u.age > 18);
+const names = users.map(u => u.name);
+
+const avgAge = users.reduce((sum, u) => sum + u.age, 0) / users.length;
+
+console.log("Користувачі:", users);
+console.log("18+:", adults);
+console.log("Імена:", names);
+console.log("Середній вік:", avgAge);
+</script>
+
+</body>
+</html>
